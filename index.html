@@ -1,0 +1,85 @@
+<!-- movie-app.freevar.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body >
+ <header class="navbar">
+            <header class="header" role="banner">
+                <h1>MOVIE MANIA</h1>
+        </header> 
+    
+        <nav class="main-nav">
+          <ul>
+              <li>
+                  <a href="#!" class=" active" id="newsfont">HOME</a>
+              </li>
+              <li>
+                  <a href="#trending">TRENDING</a>
+              </li>
+              <button class="open" onclick="openSearch()">SEARCH</button>
+              <div id="myOverlay" class="overlay">
+                <span class="closebtn" onclick="closeSearch()" title="Close Overlay">X</span>
+                <div class="overlay-content">
+                    <input type="text" id="input_value" placeholder="Search.." name="search">
+                    <button type="submit" onclick="TopMovies()"id="search"><i class="fa fa-search"></i></button> 
+  
+                </div>
+              </div>
+          </ul>
+       </nav>
+    </header>
+    <section id="slideshow" DOMContentLoaded="showSlides(slideIndex)">
+</section>
+<section id="top_movies"><h1>TRENDING</h1></section>
+<a name="trending"><section id="trending_movies_section"></section></a>
+
+<script>
+
+   var slideIndex = 1;
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+</script>
+      <script src="script.js"></script>
+</body>   
+</html>
+
