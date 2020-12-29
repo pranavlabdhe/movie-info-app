@@ -50,7 +50,7 @@ function getInfo_OfSearchMovie(searchedMovies) {
             return `
             <img class="image_poster" src="${image_url + movie.poster_path}"/>
             <h2 class="poster_des">${movie.overview}<br><br><br>IMdb: ${movie.vote_average}<br><br><br>Release Date: ${movie.release_date}
-       <a href="${newVideo}"><button class ="video_button">Watch Movie</button></a><br>
+       <br>
 </h2>
            `
         });  
